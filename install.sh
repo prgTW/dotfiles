@@ -8,6 +8,7 @@ color()
 sudo apt-get update
 sudo apt-get --yes --force-yes install git wget curl
 
+curdir=`pwd`
 dir="$HOME/dotfiles"
 mkdir -p $dir
 cd $dir
@@ -24,4 +25,4 @@ for file in `ls -A install/*.sh`; do
     bash $file
 done
 
-cd -
+cd $curdir
