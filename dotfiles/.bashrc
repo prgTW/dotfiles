@@ -123,12 +123,12 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 PS1Time='\T'
-PS1User='\w'
+PS1User='\u'
 PS1Host='\H'
 PS1Path='\w'
 
 if [ "$color_prompt" = yes ]; then
-   export PS1=$IBlack$PS1Time$Color_Off'$(git branch &>/dev/null;\
+   PS1=$IBlack$PS1Time$Color_Off'$(git branch &>/dev/null;\
       if [ $? -eq 0 ]; then \
         echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
         if [ "$?" -eq "0" ]; then \
