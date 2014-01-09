@@ -14,13 +14,7 @@ if [ "`ls -A $dir`" ]; then
 else
     cd $dir
     git clone git://github.com/prgTW/dotfiles.git .
-
-    # install everything
-    for file in /install/*.sh
-    do
-        color "Installing "$file
-        bash $file
-    done
+    bash bootstrap.sh
 fi
 
 popd
