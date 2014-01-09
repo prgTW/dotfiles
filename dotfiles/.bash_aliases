@@ -8,7 +8,7 @@ alias .....="cd ../../../.."
 
 if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
-    alias ll='ls -l --color=auto'
+    alias ll='ls -lA --color=auto'
     alias la='ls -A --color=auto'
     alias l='ls -CF --color=auto'
     
@@ -22,7 +22,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias diff='diff --color'
     alias dmesg='dmesg --color'
 else
-    alias ll='ls -l'
+    alias ll='ls -lA'
     alias la='ls -A'
     alias l='ls -CF'
 fi
