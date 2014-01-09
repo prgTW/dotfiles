@@ -2,12 +2,11 @@
 
 pushd .
 
-dir="$(dirname $(dirname $BASH_SOURCE))"
-cd "$dir"
-for file in `ls -1A dotfiles`
+dir="$(dirname $(dirname $0))/dotfiles"
+for file in `ls -1A "$dir"`
 do
     [[ -f "$HOME/$file" ]] && echo mv "$HOME/$file" "$HOME/$file.bak"
-    echo ln -f -s $dir/dotfiles/$file $HOME/$file
+    echo ln -f -s $dir/$file "$HOME/$(basename $file)"
 done
 
 popd
