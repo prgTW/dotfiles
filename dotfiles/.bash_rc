@@ -4,7 +4,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 shopt -s checkwinsize
 
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
+if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]
+then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
@@ -18,15 +19,18 @@ case "$TERM" in
     ;;
 esac
 
-if [ -x /usr/bin/dircolors ]; then
+if [ -x /usr/bin/dircolors ]
+then
     eval "$(dircolors -b)"
 fi
 
-if [ -f ~/.bash_aliases ]; then
+if [ -f ~/.bash_aliases ]
+then
     . ~/.bash_aliases
 fi
 
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+if [ -f /etc/bash_completion ] && ! shopt -oq posix
+then
     . /etc/bash_completion
 fi
 
