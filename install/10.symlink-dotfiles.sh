@@ -1,7 +1,4 @@
 #!/bin/bash
-
-pushd .
-
 dir="$(dirname $0)/../dotfiles"
 pwd
 for file in `ls -A "$dir"`
@@ -10,4 +7,3 @@ do
     #echo ln -f -s $dir/$file "$HOME/$(basename $file)"
 done
 
-popd
