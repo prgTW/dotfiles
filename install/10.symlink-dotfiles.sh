@@ -6,3 +6,4 @@ for dotfile in `ls -A "$dotfiles"`; do
     ln -f -s "$(readlink -f ""$dotfile"")" "$HOME/$(basename $dotfile)"
 done
 
+source $HOME/.bash_profile
