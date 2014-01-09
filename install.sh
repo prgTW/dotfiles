@@ -1,7 +1,5 @@
 #!/bin/bash
 
-pushd .
-
 color()
 {
     echo -e "\e[01;32m >> \e[00m$*";
@@ -26,4 +24,4 @@ for file in `ls -A install/*.sh`; do
     bash $file
 done
 
-popd
+cd -
