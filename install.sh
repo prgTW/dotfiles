@@ -17,6 +17,7 @@ cd $dir
 if [ "`ls -A $dir`" == "" ]; then
     git clone git://github.com/prgTW/dotfiles.git .
 else
+    git reset--hard HEAD
     git pull
 fi
 
