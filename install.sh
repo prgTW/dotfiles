@@ -1,5 +1,7 @@
 #!/bin/bash
 
+pushd .
+
 dir="$HOME/dotfiles"
 mkdir -p $dir
 if [ "`ls -A $dir`" ]; then
@@ -9,3 +11,5 @@ else
     git clone git://github.com/prgTW/dotfiles.git .
     sudo bash update.sh
 fi
+
+popd
