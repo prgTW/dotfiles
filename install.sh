@@ -23,7 +23,9 @@ fi
 cd install
 for file in `ls -A *.sh`; do
     color "Running "$file
+    pushd .
     bash $file
+    popd
 done
 
 popd
