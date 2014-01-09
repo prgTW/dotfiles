@@ -7,6 +7,9 @@ color()
     echo -e "\e[01;32m >> \e[00m$*";
 }
 
+sudo apt-get update
+sudo apt-get --yes --force-yes install git wget curl
+
 dir="$HOME/dotfiles"
 mkdir -p $dir
 cd $dir
