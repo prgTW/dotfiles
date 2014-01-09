@@ -137,7 +137,7 @@ if [ "$color_prompt" = yes ]; then
         # @2 - Prompt when not in GIT repo
         echo " '$BGreen\u@$BRed\H$Color_Off:$Yellow$PathShort$Color_Off'\$ "; \
       fi)'
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\[\033[01;31m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\[\033[01;31m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
