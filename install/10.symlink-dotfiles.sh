@@ -2,7 +2,7 @@
 
 pushd .
 
-dir="$(dirname $(dirname $0))/dotfiles"
+dir="$(dirname $0)/dotfiles"
 for file in `ls -A "$dir"`
 do
     [[ -f "$HOME/$file" ]] && echo mv "$HOME/$file" "$HOME/$file.bak"
