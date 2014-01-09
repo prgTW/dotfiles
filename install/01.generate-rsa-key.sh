@@ -1,4 +1,5 @@
 #!/bin/bash
 
+priv=$HOME/.ssh/id_rsa
 pub=$HOME/.ssh/id_rsa.pub
-[[ -f $pub ]] || ssh-keygen -t rsa -b2048
+[[ -f $priv ]] || ssh-keygen -t rsa -b 2048 -f "$priv"
