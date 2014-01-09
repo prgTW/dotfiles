@@ -14,7 +14,7 @@ if [ "`ls -A $dir`" ]; then
 else
     cd $dir
     git clone git://github.com/prgTW/dotfiles.git .
-    bash bootstrap.sh
+    bash update.sh
 fi
 
 popd
