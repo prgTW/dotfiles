@@ -123,7 +123,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-   PS1=$IBlack\T$Color_Off'$(git branch &>/dev/null;\
+   export PS1=$IBlack\T$Color_Off'$(git branch &>/dev/null;\
       if [ $? -eq 0 ]; then \
         echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
         if [ "$?" -eq "0" ]; then \
