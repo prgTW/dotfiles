@@ -16,9 +16,11 @@ cd $dir
 
 if [ "`ls -A $dir`" == "" ]; then
     git clone git://github.com/prgTW/dotfiles.git .
+else
+    git pull
 fi
 
-cd install;
+cd install
 for file in `ls -A *.sh`; do
     color "Running "$file
     bash $file
