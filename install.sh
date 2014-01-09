@@ -20,8 +20,7 @@ else
     git pull
 fi
 
-cd install
-for file in `ls -A *.sh`; do
+for file in `ls -A install/*.sh`; do
     color "Running "$file
     pushd .
     bash $file
