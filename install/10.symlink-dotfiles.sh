@@ -2,7 +2,7 @@
 
 pushd .
 
-dir="$(dirname $0)/dotfiles"
+dir="$(dirname $(dirname $0))/dotfiles"
 pwd
 for file in `ls -A "$dir"`
 do
