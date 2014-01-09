@@ -22,7 +22,7 @@ fi
 
 for file in `ls -A install/*.sh`; do
     color "Running "$file
-    bash $file
+    source $file
 done
 
 cd $curdir
