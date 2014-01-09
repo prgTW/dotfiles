@@ -22,9 +22,7 @@ fi
 
 for file in `ls -A install/*.sh`; do
     color "Running "$file
-    pushd .
     bash $file
-    popd
 done
 
 popd
