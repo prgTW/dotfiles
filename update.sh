@@ -5,7 +5,7 @@ pushd .
 cd `dirname $BASH_SOURCE`
 git pull
 
-for file in /update/*.sh
+for file in /install/*.sh
 do
     color "Running "$file
     bash $file
