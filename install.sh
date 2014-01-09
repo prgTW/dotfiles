@@ -2,7 +2,7 @@
 
 color()
 {
-    echo -e "\e[01;32m >> \e[00m$*";
+    echo -e "\e[01;32m >> $*\e[00m";
 }
 
 sudo apt-get update
