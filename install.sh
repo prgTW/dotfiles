@@ -18,9 +18,9 @@ if [ "`ls -A $dir`" == "" ]; then
     git clone git://github.com/prgTW/dotfiles.git .
 fi
 
-#for file in install/*.sh; do
-    #color "Running "$file
+for file in install/*.sh; do
+    color "Running "$file
     #bash $file
-#done
+done
 
 popd
