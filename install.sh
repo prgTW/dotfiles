@@ -9,15 +9,15 @@ color()
 
 dir="$HOME/dotfiles"
 mkdir -p $dir
-if [ "`ls -A $dir`" ]; then
-    for file in install/*.sh; do
-        color "Running "$file
-        bash $file
-    done
-else
-    cd $dir
+cd $dir
+
+if [ "`ls -A $dir`" == "" ]; then
     git clone git://github.com/prgTW/dotfiles.git .
-    bash update.sh
 fi
+
+for file in install/*.sh; do
+    color "Running "$file
+    bash $file
+done
 
 popd
