@@ -122,10 +122,13 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+PS1Time='\T'
+PS1User='\w'
+PS1Host='\H'
 PS1Path='\w'
 
 if [ "$color_prompt" = yes ]; then
-   export PS1=$IBlack\T$Color_Off'$(git branch &>/dev/null;\
+   export PS1=$IBlack$PS1Time$Color_Off'$(git branch &>/dev/null;\
       if [ $? -eq 0 ]; then \
         echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
         if [ "$?" -eq "0" ]; then \
@@ -137,7 +140,7 @@ if [ "$color_prompt" = yes ]; then
         fi) '$BYellow$PS1Path$Color_Off'\$ "; \
       else \
         # @2 - Prompt when not in GIT repo
-        echo " '$BGreen\u@$BRed\H$Color_Off:$Yellow$PS1Path$Color_Off'\$ "; \
+        echo " '$BGreen$PS1User@$BRed$PS1Host$Color_Off:$Yellow$PS1Path$Color_Off'\$ "; \
       fi)'
     #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\[\033[01;31m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
