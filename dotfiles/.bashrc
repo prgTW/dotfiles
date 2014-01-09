@@ -122,6 +122,8 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+PS1Path='\w'
+
 if [ "$color_prompt" = yes ]; then
    export PS1=$IBlack\T$Color_Off'$(git branch &>/dev/null;\
       if [ $? -eq 0 ]; then \
@@ -132,10 +134,10 @@ if [ "$color_prompt" = yes ]; then
         else \
           # @5 - Changes to working tree
           echo "'$IRed'"$(__git_ps1 " {%s}"); \
-        fi) '$BYellow$PathShort$Color_Off'\$ "; \
+        fi) '$BYellow$PS1Path$Color_Off'\$ "; \
       else \
         # @2 - Prompt when not in GIT repo
-        echo " '$BGreen\u@$BRed\H$Color_Off:$Yellow$PathShort$Color_Off'\$ "; \
+        echo " '$BGreen\u@$BRed\H$Color_Off:$Yellow$PS1Path$Color_Off'\$ "; \
       fi)'
     #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\[\033[01;31m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
