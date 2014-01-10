@@ -126,7 +126,6 @@ PS1Time='\T'
 PS1User='\u'
 PS1Host='\H'
 PS1Path='\w'
-alias __git_ps1="git branch 2>/dev/null | grep '*' | sed 's/* \(.*\)/(\1)/'"
 
 if [ "$color_prompt" = yes ]; then
    PS1=$IBlack$PS1Time$Color_Off'$(git branch &>/dev/null;\
