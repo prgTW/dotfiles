@@ -1,5 +1,13 @@
 #!/bin/bash
 
+if [ "$1" -neq "desktop"] and [ "$1" -neq "server" ] ; then
+    echo Specify "desktop" or "server" as the first parameter
+    return 1
+fi
+
+isDesktop=[[ "$1" == "desktop" ]]
+isServer=[[ "$1" == "server" ]]
+
 color()
 {
     echo -e "\e[01;32m$*\e[00m";
