@@ -1,5 +1,7 @@
 #!/bin/bash
 
+bootstrapName=
+
 color()
 {
     echo -e "\e[01;32m$*\e[00m";
@@ -8,7 +10,7 @@ color()
 process_file()
 {
     color "Running "$1
-    source $1
+    source $1 "$bootstrapName"
 }
 
 bootstrap()
