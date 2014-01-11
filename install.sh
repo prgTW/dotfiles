@@ -31,7 +31,9 @@ process_file()
 bootstrap()
 {
     for file in `ls -A bootstrap/$1/*.sh`; do
+        curdir=`pwd`
         process_file $file
+        cd $curdir
     done
 }
 
