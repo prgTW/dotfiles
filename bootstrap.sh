@@ -20,4 +20,17 @@ bootstrap()
     done
 }
 
-bootstrap $1
+mkdir -p `dirname "$bootstrapFile"`
+
+bootstrapFile="$HOME"/.dotfies/bootstrap
+bootstrapName=`cat "$bootstrapFile"`
+
+if [ -z "$bootstrapName"]; then
+    if [ "$1" == ""]; then
+        echo Usage: $0 bootstrapName
+        return 1;
+    fi
+    echo "$bootstrapName" > $bootstrapFile
+fi
+
+bootstrap $bootstrapName
