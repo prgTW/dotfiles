@@ -14,7 +14,7 @@ color()
 }
 
 sudo apt-get update
-sudo apt-get --yes --force-yes install git wget curl
+sudo apt-get --yes --force-yes install git
 
 curdir=`pwd`
 dir="$HOME/dotfiles"
