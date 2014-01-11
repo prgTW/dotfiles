@@ -10,7 +10,6 @@ prepare()
     sudo apt-get update
     sudo apt-get --yes --force-yes install git
     
-    curdir=`pwd`
     dir="$HOME/dotfiles"
     mkdir -p $dir
     cd $dir
@@ -21,8 +20,6 @@ prepare()
         git reset --hard HEAD
         git pull
     fi
-    
-    cd $curdir
 }
 
 process_file()
@@ -44,17 +41,21 @@ install()
     bootstrap $1
 }
 
-prepare
-
 if [ "$1" -neq "desktop"] and [ "$1" -neq "server" ] ; then
     echo Specify "desktop" or "server" as the first parameter
     return 1
 fi
 
-if [ "$1" -neq "desktop"] and [ "$1" -neq "server" ] ; then
+curdir=`pwd`
+
+prepare
+
+if [ "$1" == "server"]; then
     install server
 fi
 
-if [ "$1" -neq "desktop"] and [ "$1" -neq "server" ] ; then
+if [ "$1" == "desktop"]; then
     install desktop
 fi
+
+cd $curdir
